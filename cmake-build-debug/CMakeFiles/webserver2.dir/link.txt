@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/webserver2.dir/src/main.cpp.o CMakeFiles/webserver2.dir/src/http/Server.cpp.o  -o webserver2 
