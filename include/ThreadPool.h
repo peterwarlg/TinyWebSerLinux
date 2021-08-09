@@ -1,7 +1,3 @@
-//
-// Created by marvinle on 2019/2/25 11:26 PM.
-//
-
 //#ifndef WEBSERVER_THREADPOLL_H
 //#define WEBSERVER_THREADPOLL_H
 

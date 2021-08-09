@@ -1,7 +1,3 @@
-//
-// Created by marvinle on 2019/2/26 5:11 PM.
-//
-
 //#ifndef WEBSERVER_EPOLL_H
 //#define WEBSERVER_EPOLL_H
 #pragma once

@@ -1,7 +1,3 @@
-//
-// Created by marvinle on 2019/2/26 6:36 PM.
-//
-
 //#ifndef WEBSERVER_HTTPREQUEST_H
 //#define WEBSERVER_HTTPREQUEST_H
 #pragma once

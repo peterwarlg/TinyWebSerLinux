@@ -1,7 +1,3 @@
-//
-// Created by marvinle on 2019/2/1 10:59 AM.
-//
-
 #include "../../include/HttpRequest.h"
 #include "../../include/HttpParse.h"
 #include "../../include/Util.h"

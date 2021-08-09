@@ -1,7 +1,3 @@
-//
-// Created by marvinle on 2019/2/26 8:08 PM.
-//
-
 #include "../include/Epoll.h"
 #include "../include/Util.h"
 #include <iostream>

@@ -1,6 +1,3 @@
-//
-// Created by marvinle on 2019/2/26 2:39 PM.
-//
 //#ifndef WEBSERVER_HTTPDATA_H
 //#define WEBSERVER_HTTPDATA_H
 
