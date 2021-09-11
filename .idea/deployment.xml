@@ -5,7 +5,7 @@
       <paths name="远程主机 (2d7663e8-3df6-4a04-a5cb-29cb8a94534c)">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/wangzitu/webserver1/webserver2" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/wangzitu/webserver1/webservermem" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />

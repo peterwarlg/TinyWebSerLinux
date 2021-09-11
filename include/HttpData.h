@@ -1,3 +1,6 @@
+//
+// Created by marvinle on 2019/2/26 2:39 PM.
+//
 //#ifndef WEBSERVER_HTTPDATA_H
 //#define WEBSERVER_HTTPDATA_H
 
@@ -8,6 +11,7 @@
 #include "Socket.h"
 #include "Timer.h"
 #include <memory>
+#include "MemoryPool.h"
 
 
 class TimerNode;
@@ -25,7 +29,7 @@ public:
     int epoll_fd;
 
     void closeTimer();
-
+    void* operator new(size_t, MemoryPool* mempool);
     void setTimer(std::shared_ptr<TimerNode>);
 
 private:

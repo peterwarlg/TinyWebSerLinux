@@ -150,6 +150,60 @@ src/Epoll.cpp.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/Epoll.cpp.s
 .PHONY : src/Epoll.cpp.s
 
+src/MemoryBlock.o: src/MemoryBlock.cpp.o
+
+.PHONY : src/MemoryBlock.o
+
+# target to build an object file
+src/MemoryBlock.cpp.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryBlock.cpp.o
+.PHONY : src/MemoryBlock.cpp.o
+
+src/MemoryBlock.i: src/MemoryBlock.cpp.i
+
+.PHONY : src/MemoryBlock.i
+
+# target to preprocess a source file
+src/MemoryBlock.cpp.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryBlock.cpp.i
+.PHONY : src/MemoryBlock.cpp.i
+
+src/MemoryBlock.s: src/MemoryBlock.cpp.s
+
+.PHONY : src/MemoryBlock.s
+
+# target to generate assembly for a file
+src/MemoryBlock.cpp.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryBlock.cpp.s
+.PHONY : src/MemoryBlock.cpp.s
+
+src/MemoryPool.o: src/MemoryPool.cpp.o
+
+.PHONY : src/MemoryPool.o
+
+# target to build an object file
+src/MemoryPool.cpp.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryPool.cpp.o
+.PHONY : src/MemoryPool.cpp.o
+
+src/MemoryPool.i: src/MemoryPool.cpp.i
+
+.PHONY : src/MemoryPool.i
+
+# target to preprocess a source file
+src/MemoryPool.cpp.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryPool.cpp.i
+.PHONY : src/MemoryPool.cpp.i
+
+src/MemoryPool.s: src/MemoryPool.cpp.s
+
+.PHONY : src/MemoryPool.s
+
+# target to generate assembly for a file
+src/MemoryPool.cpp.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/src/MemoryPool.cpp.s
+.PHONY : src/MemoryPool.cpp.s
+
 src/Socket.o: src/Socket.cpp.o
 
 .PHONY : src/Socket.o
@@ -432,6 +486,12 @@ help:
 	@echo "... src/Epoll.o"
 	@echo "... src/Epoll.i"
 	@echo "... src/Epoll.s"
+	@echo "... src/MemoryBlock.o"
+	@echo "... src/MemoryBlock.i"
+	@echo "... src/MemoryBlock.s"
+	@echo "... src/MemoryPool.o"
+	@echo "... src/MemoryPool.i"
+	@echo "... src/MemoryPool.s"
 	@echo "... src/Socket.o"
 	@echo "... src/Socket.i"
 	@echo "... src/Socket.s"

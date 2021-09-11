@@ -1,3 +1,7 @@
+//
+// Created by marvinle on 2019/2/1 7:34 PM.
+//
+
 #include "../../include/Server.h"
 #include "../../include/HttpParse.h"
 #include "../../include/HttpResponse.h"
@@ -17,7 +21,15 @@
 #include <sys/epoll.h>
 #include <vector>
 #include <cstring>
+#include "../../include/HttpData.h"
 
+extern MemoryPool* mempool;
+
+void deleter(HttpData *p) {
+//    printf("%s\n", "++++++++++ deleter ++++++++++");
+    p->~HttpData();
+    mempool->Deallocate(p);
+}
 
 
 char NOT_FOUND_PAGE[] = "<html>\n"
@@ -69,7 +81,16 @@ extern std::string basePath;
 void HttpServer::run(int thread_num, int max_queque_size) {
     ThreadPool threadPool(thread_num, max_queque_size);
     int epoll_fd = Epoll::init(1024);
-    std::shared_ptr<HttpData> httpData(new HttpData());
+
+    //内存池方法，另一处在Epoll.cpp
+    std::shared_ptr<HttpData> httpData(new(mempool) HttpData(), deleter);
+
+//    std::shared_ptr<HttpData> httpDataa(new(mempool) HttpData(), deleter);
+//    std::shared_ptr<HttpData> httpData = httpDataa;
+
+    //原版new方法
+//    std::shared_ptr<HttpData> httpData(::new HttpData());
+
     httpData->epoll_fd = epoll_fd;
     serverSocket.epoll_fd = epoll_fd;   // 之前就是这里忘了添加,导致穿进去的serverSocket具有不正确的epoll_fd
 
@@ -110,9 +131,9 @@ void HttpServer::do_request(std::shared_ptr<void> arg) {
             return;
         }
         // todo 返回值为 0对端关闭, 这边也应该关闭定时器
-        std::cout << "recv_data: " << recv_data << std::endl;
+//        std::cout << "recv_data: " << recv_data << std::endl;
         if (recv_data == 0) {
-            std::cout << "connection closed by peer" << std::endl;
+//            std::cout << "connection closed by peer" << std::endl;
             break;
         }
 
@@ -250,10 +271,10 @@ void HttpServer::send(std::shared_ptr<HttpData> httpData, FileState fileState) {
         // 如果是 '/'开头就发送默认页
         if (httpData->response_->fooFilePath() == std::string("/")) {
             // 现在使用测试页面
-            sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(INDEX_PAGE));
+            sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(INDEX_PAGE));
             sprintf(header, "%s%s", header, INDEX_PAGE);
         } else {
-            sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(NOT_FOUND_PAGE));
+            sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(NOT_FOUND_PAGE));
             sprintf(header, "%s%s", header, NOT_FOUND_PAGE);
         }
         ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
@@ -261,14 +282,14 @@ void HttpServer::send(std::shared_ptr<HttpData> httpData, FileState fileState) {
     }
 
     if (fileState == FILE_FORBIDDEN) {
-        sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(FORBIDDEN_PAGE));
+        sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(FORBIDDEN_PAGE));
         sprintf(header, "%s%s", header, FORBIDDEN_PAGE);
         ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
         return;
     }
     // 获取文件状态
      if (stat(httpData->response_->fooFilePath().c_str(), &file_stat) < 0) {
-         sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(internal_error));
+         sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(internal_error));
          sprintf(header, "%s%s", header, internal_error);
          ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
          return;
@@ -278,14 +299,14 @@ void HttpServer::send(std::shared_ptr<HttpData> httpData, FileState fileState) {
     // 内部错误
     if (filefd < 0) {
         std::cout << "打开文件失败" << std::endl;
-        sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(internal_error));
+        sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(internal_error));
         sprintf(header, "%s%s", header, internal_error);
         ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
         close(filefd);
         return;
     }
 
-    sprintf(header,"%sContent-length: %d\r\n\r\n", header, file_stat.st_size);
+    sprintf(header,"%sContent-length: %d\r\n\r\n", header, (int)file_stat.st_size);
     ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
     void *mapbuf = mmap(NULL, file_stat.st_size, PROT_READ, MAP_PRIVATE, filefd, 0);
     ::send(httpData->clientSocket_->fd, mapbuf, file_stat.st_size, 0);
@@ -293,7 +314,7 @@ void HttpServer::send(std::shared_ptr<HttpData> httpData, FileState fileState) {
     close(filefd);
     return;
 err:
-    sprintf(header, "%sContent-length: %d\r\n\r\n", header, strlen(internal_error));
+    sprintf(header, "%sContent-length: %d\r\n\r\n", header, (int)strlen(internal_error));
     sprintf(header, "%s%s", header, internal_error);
     ::send(httpData->clientSocket_->fd, header, strlen(header), 0);
     return;

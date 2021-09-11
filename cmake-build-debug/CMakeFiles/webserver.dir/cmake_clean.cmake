@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/webserver.dir/src/Epoll.cpp.o"
+  "CMakeFiles/webserver.dir/src/MemoryBlock.cpp.o"
+  "CMakeFiles/webserver.dir/src/MemoryPool.cpp.o"
   "CMakeFiles/webserver.dir/src/Socket.cpp.o"
   "CMakeFiles/webserver.dir/src/ThreadPool.cpp.o"
   "CMakeFiles/webserver.dir/src/Timer.cpp.o"

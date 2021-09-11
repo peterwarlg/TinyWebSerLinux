@@ -85,6 +85,12 @@
 		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Epoll.cpp">
 			<Option target="webserver"/>
 		</Unit>
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/MemoryBlock.cpp">
+			<Option target="webserver"/>
+		</Unit>
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/MemoryPool.cpp">
+			<Option target="webserver"/>
+		</Unit>
 		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Socket.cpp">
 			<Option target="webserver"/>
 		</Unit>

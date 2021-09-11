@@ -1,3 +1,7 @@
+//
+// Created by marvinle on 2019/2/1 4:21 PM.
+//
+
 #include "../include/Socket.h"
 #include "../include/Util.h"
 #include <cstring>
@@ -79,7 +83,7 @@ ServerSocket::~ServerSocket() {
 
 void ClientSocket::close() {
     if (fd >= 0) {
-        //std::cout << "文件描述符关闭: " << fd <<std::endl;
+//        std::cout << "文件描述符关闭: " << fd <<std::endl;
         ::close(fd);
         fd = -1;
     }

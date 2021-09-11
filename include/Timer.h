@@ -1,3 +1,6 @@
+//
+// Created by marvinle on 2019/2/26 3:19 PM.
+//
 //#ifndef WEBSERVER_TIMER_H
 //#define WEBSERVER_TIMER_H
 
@@ -9,6 +12,8 @@
 #include <queue>
 #include <deque>
 #include <memory>
+
+
 
 class HttpData;
 
@@ -23,7 +28,7 @@ public:
     size_t getExpireTime() { return expiredTime_; }
 
     bool isExpire() {
-        // 频繁调用系统调用不好
+        // 平凡调用系统调用不好
         //current_time();
         return expiredTime_ < current_msec;
     }

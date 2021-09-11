@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.10)
 project(webserver2)
 
 set(CMAKE_CXX_STANDARD 11)
 
 set(CXX_FLAGS
+        -g
         -Wall
         -std=c++11
         -lpthread
@@ -32,6 +33,8 @@ set(SOURCE_FILES
         src/Util.cpp
         src/Epoll.cpp
         src/main.cpp
+        src/MemoryBlock.cpp
+        src/MemoryPool.cpp
         )
 
 add_executable(webserver  ${SOURCE_FILES})

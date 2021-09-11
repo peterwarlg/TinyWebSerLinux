@@ -1,3 +1,7 @@
+//
+// Created by marvinle on 2019/2/26 8:08 PM.
+//
+
 #include "../include/Epoll.h"
 #include "../include/Util.h"
 #include <iostream>
@@ -5,7 +9,8 @@
 #include <sys/epoll.h>
 #include <cstdio>
 
-
+extern void deleter(HttpData *p);
+extern MemoryPool *mempool;
 
 std::unordered_map<int, std::shared_ptr<HttpData>> Epoll::httpDataMap;
 const int Epoll::MAX_EVENTS = 10000;
@@ -34,6 +39,7 @@ int Epoll::addfd(int epoll_fd, int fd, __uint32_t events, std::shared_ptr<HttpDa
     event.data.fd = fd;
     // 增加httpDataMap
     httpDataMap[fd] = httpData;
+
     int ret = ::epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &event);
     if (ret < 0) {
         std::cout << "epoll add error" << endl;
@@ -86,7 +92,7 @@ void Epoll::handleConnection(const ServerSocket &serverSocket) {
         // 设置非阻塞
         int ret = setnonblocking(tempClient->fd);
         if (ret < 0) {
-            std::cout << "setnonblocking error" << std::endl;
+            std::cout << "set nonblocking error" << std::endl;
             tempClient->close();
             continue;
         }
@@ -95,7 +101,14 @@ void Epoll::handleConnection(const ServerSocket &serverSocket) {
 
         // 在这里做限制并发, 暂时未完成
 
-        std::shared_ptr<HttpData> sharedHttpData(new HttpData);
+        //内存池方法，另一处在Server.cpp
+        std::shared_ptr<HttpData> sharedHttpData(new(mempool) HttpData(), deleter);
+//        std::shared_ptr<HttpData> sharedHttpDataa(new(mempool) HttpData(), deleter);
+//        std::shared_ptr<HttpData> sharedHttpData = sharedHttpDataa;
+
+        //原版new方法
+//        std::shared_ptr<HttpData> sharedHttpData(::new HttpData());
+
         sharedHttpData->request_ = std::shared_ptr<HttpRequest>(new HttpRequest());
         sharedHttpData->response_ = std::shared_ptr<HttpResponse>(new HttpResponse());
 

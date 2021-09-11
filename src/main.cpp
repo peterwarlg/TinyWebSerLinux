@@ -1,3 +1,7 @@
+//
+// Created by marvinle on 2019/2/1 7:26 PM.
+//
+
 #include "../include/Server.h"
 #include "../include/Util.h"
 
@@ -11,8 +15,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <signal.h>  //for signal
+#include "../include/MemoryPool.h"
 
-
+MemoryPool *mempool = MemoryPool::fooGetMemoryPoolInstance();
 
 std::string basePath = ".";   //默认是程序当前目录
 
@@ -125,4 +130,6 @@ int main(int argc, char **argv) {
 
     HttpServer httpServer(port);
     httpServer.run(threadNumber);
+
+    mempool->~MemoryPool();
 }

@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/wangzitu/webserver1/webservernomem/src/Epoll.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Epoll.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/MemoryBlock.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/MemoryBlock.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/MemoryPool.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/MemoryPool.cpp.o"
   "/home/wangzitu/webserver1/webservernomem/src/Socket.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Socket.cpp.o"
   "/home/wangzitu/webserver1/webservernomem/src/ThreadPool.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/ThreadPool.cpp.o"
   "/home/wangzitu/webserver1/webservernomem/src/Timer.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Timer.cpp.o"

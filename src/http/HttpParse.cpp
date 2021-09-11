@@ -1,3 +1,7 @@
+//
+// Created by marvinle on 2019/2/1 10:59 AM.
+//
+
 #include "../../include/HttpRequest.h"
 #include "../../include/HttpParse.h"
 #include "../../include/Util.h"
@@ -48,7 +52,7 @@ HttpRequestParser::fooParseLine(char *buffer, int &checked_index, int &read_inde
 HttpRequestParser::HTTP_CODE
 HttpRequestParser::fooParseRequestline(char *line, PARSE_STATE &parse_state, HttpRequest &request) {
     char *url = strpbrk(line, " \t");
-    std::cout << line << std::endl;
+//    std::cout << line << std::endl;
     if (!url) {
         return BAD_REQUEST;
     }
