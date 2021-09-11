@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/wangzitu/webserver1/webserver2/cmake-build-debug"/>
+				<Option working_dir="/home/wangzitu/webserver1/webservernomem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/wangzitu/webserver1/webserver2/cmake-build-debug"/>
+				<Option working_dir="/home/wangzitu/webserver1/webservernomem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/wangzitu/webserver1/webserver2/cmake-build-debug"/>
+				<Option working_dir="/home/wangzitu/webserver1/webservernomem/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="webserver">
-				<Option output="/home/wangzitu/webserver1/webserver2/cmake-build-debug/webserver" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wangzitu/webserver1/webserver2/cmake-build-debug"/>
+				<Option output="/home/wangzitu/webserver1/webservernomem/cmake-build-debug/webserver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wangzitu/webserver1/webservernomem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +53,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 webserver"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 webserver"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="webserver/fast">
-				<Option output="/home/wangzitu/webserver1/webserver2/cmake-build-debug/webserver" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/wangzitu/webserver1/webserver2/cmake-build-debug"/>
+				<Option output="/home/wangzitu/webserver1/webservernomem/cmake-build-debug/webserver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/wangzitu/webserver1/webservernomem/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,47 +75,47 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 webserver/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webserver2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 webserver/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/wangzitu/webserver1/webservernomem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/Epoll.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Epoll.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/Socket.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Socket.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/ThreadPool.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/ThreadPool.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/Timer.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Timer.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/Util.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/Util.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/http/HttpData.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/http/HttpData.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/http/HttpParse.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/http/HttpParse.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/http/HttpRequest.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/http/HttpRequest.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/http/HttpResponse.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/http/HttpResponse.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/http/Server.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/http/Server.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/src/main.cpp">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/src/main.cpp">
 			<Option target="webserver"/>
 		</Unit>
-		<Unit filename="/home/wangzitu/webserver1/webserver2/CMakeLists.txt">
+		<Unit filename="/home/wangzitu/webserver1/webservernomem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

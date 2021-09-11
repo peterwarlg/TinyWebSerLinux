@@ -1,4 +1,4 @@
-# Install script for directory: /home/wangzitu/webserver1/webserver2
+# Install script for directory: /home/wangzitu/webserver1/webservernomem
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/wangzitu/webserver1/webserver2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -10,8 +10,6 @@
 #include <deque>
 #include <memory>
 
-
-
 class HttpData;
 
 class TimerNode {
@@ -25,7 +23,7 @@ public:
     size_t getExpireTime() { return expiredTime_; }
 
     bool isExpire() {
-        // 平凡调用系统调用不好
+        // 频繁调用系统调用不好
         //current_time();
         return expiredTime_ < current_msec;
     }

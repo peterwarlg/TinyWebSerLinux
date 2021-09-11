@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="webserver2" targetName="webserver" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -18,6 +20,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="ProjectId" id="1tVYmk2tiBd3UleLRTSdcunMj90" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/http" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
@@ -45,6 +48,11 @@
   </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="webserver" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="webserver2" TARGET_NAME="webserver" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="webserver2" RUN_TARGET_NAME="webserver">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -72,6 +80,16 @@
       <workItem from="1626765896471" duration="1703000" />
       <workItem from="1626768994763" duration="2210000" />
       <workItem from="1628495996837" duration="190000" />
+      <workItem from="1628817847723" duration="3064000" />
+      <workItem from="1628856421742" duration="9069000" />
+      <workItem from="1628941208618" duration="2610000" />
+      <workItem from="1628996168858" duration="6347000" />
+      <workItem from="1629027909245" duration="5302000" />
+      <workItem from="1629611960355" duration="122000" />
+      <workItem from="1630895587962" duration="5101000" />
+      <workItem from="1630915943419" duration="1350000" />
+      <workItem from="1631260702153" duration="17000" />
+      <workItem from="1631275924234" duration="1103000" />
     </task>
     <servers />
   </component>

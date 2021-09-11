@@ -14,11 +14,10 @@ std::string &rtrim(string &);
 std::string &trim(string &);
 
 int setnonblocking(int fd);
+
 void handle_for_sigpipe();
 
 int check_base_path(char *basePath);
-
-
 
 
 //#endif //WEBSERVER_UTILS_H

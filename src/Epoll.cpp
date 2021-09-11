@@ -17,8 +17,6 @@ const __uint32_t Epoll::DEFAULT_EVENTS =  (EPOLLIN | EPOLLET | EPOLLONESHOT);
 TimerManager Epoll::timerManager;
 
 
-
-
 int Epoll::init(int max_events) {
     int epoll_fd = ::epoll_create(max_events);
     if (epoll_fd == -1) {

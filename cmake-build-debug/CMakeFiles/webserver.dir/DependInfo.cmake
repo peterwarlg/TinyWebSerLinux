@@ -4,17 +4,17 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wangzitu/webserver1/webserver2/src/Epoll.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/Epoll.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/Socket.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/Socket.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/ThreadPool.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/ThreadPool.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/Timer.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/Timer.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/Util.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/Util.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/http/HttpData.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpData.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/http/HttpParse.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpParse.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/http/HttpRequest.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpRequest.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/http/HttpResponse.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpResponse.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/http/Server.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/http/Server.cpp.o"
-  "/home/wangzitu/webserver1/webserver2/src/main.cpp" "/home/wangzitu/webserver1/webserver2/cmake-build-debug/CMakeFiles/webserver.dir/src/main.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/Epoll.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Epoll.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/Socket.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Socket.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/ThreadPool.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/ThreadPool.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/Timer.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Timer.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/Util.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/Util.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/http/HttpData.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpData.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/http/HttpParse.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpParse.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/http/HttpRequest.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpRequest.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/http/HttpResponse.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/http/HttpResponse.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/http/Server.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/http/Server.cpp.o"
+  "/home/wangzitu/webserver1/webservernomem/src/main.cpp" "/home/wangzitu/webserver1/webservernomem/cmake-build-debug/CMakeFiles/webserver.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
