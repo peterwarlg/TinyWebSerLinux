@@ -1,5 +1,5 @@
 //
-// Created by marvinle on 2019/2/1 7:26 PM.
+// Created by peterwarlg on 2021/2/1 7:26 PM.
 //
 
 #include "../include/Server.h"
@@ -60,7 +60,10 @@ void daemon_run()
 
 
 int main(int argc, char **argv) {
-
+    char *bufferrr;
+    bufferrr = getcwd(NULL, 0);
+    cout << "文件路径" << bufferrr << endl;
+    printf("wangzitu");
     int threadNumber = 4;   //  默认线程数
     int port = 7244;        // 默认端口
     char tempPath[256];

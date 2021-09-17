@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>多态</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1749ff7a-2187-4d8a-a4c1-f88ac9079fd4" class="page mono"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_11.jpg" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🥎</span></div><h1 class="page-title">多态</h1></header><div class="page-body"><nav id="3701d6d3-c726-403d-bcdd-808485c199b3" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#01489cf2-6910-4f38-ba0b-d28ce0ac64ed">继承中的多态：单继承和多继承</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e4df2e3c-18d4-4d82-89bb-4ad3bcc5011e">单继承</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e86b3255-49ba-4625-b0ef-0962a2e1d50f">多继承</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#867ca5c2-3bea-4f78-91f1-1173c6608ed8">多态与虚继承：vptr和vbptr</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#489ef66d-259c-476f-8eb0-bf75087ff3bc">vbptr有什么用：保存着什么</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#366c23a8-7c4a-44df-8e0a-ebe1a64c9605">内存模型</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#63794087-dc66-4d2e-bea2-c8382852dbac">面试题</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e2c4ab3-3155-48d4-a533-f9c7a710207d">1.菱形继承下基类B的构造函数由谁来初始化</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#23aedbed-5cfb-4495-b2e5-63fca5b09d90">2.虚函数表和虚基类表在内存的什么位置</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#283af8d7-d6e2-472c-84da-aecc3dc8ce63">3.抽象类是什么</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6743732f-3d55-4afb-8d01-662dc70023ce">4. final 和override 关键字</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5c22ddbf-fce1-4ba7-9e62-94509f2d39d8">5. inline函数可以是虚函数吗</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5888519c-d371-484c-9635-e0bae843270c">6. static可以是虚函数吗</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8981385e-8668-4535-ada8-ee3a14c4321a">7. 构造函数可以是虚函数吗</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f9008f7d-152c-47fa-a33a-6796cc71e05c">8. 析构函数可以是虚函数吗</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2a6f3640-a9ac-4ce0-82b8-ec5f7554bbcb">9. 对象访问虚函数快还是成员函数快</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a054aae7-291e-4721-9dba-403bf78517a4">10. 虚继承下的构造顺序 | 虚基类的构造函数由谁调用</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#85db6d07-4b78-4b45-a6c8-c28c42aaa8e2">11. 设计一个不能被继承的类</a></div></nav><h1 id="01489cf2-6910-4f38-ba0b-d28ce0ac64ed" class="">继承中的多态：单继承和多继承</h1><h2 id="e4df2e3c-18d4-4d82-89bb-4ad3bcc5011e" class="">单继承</h2><ol type="1" id="e8a8bcbd-5760-43a3-9e4e-23b3266d5480" class="numbered-list" start="1"><li><strong>单继承无虚函数覆盖: 虚函数按声明顺序存放,父类虚函数在子类虚函数前面.</strong><figure id="a7d5983a-a2b6-4d34-b830-979253719eaa" class="image"><a href="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled.png"><img style="width:432px" src="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled.png"/></a></figure></li></ol><ol type="1" id="2133ef44-f87a-4801-aa13-9e4b5369c9be" class="numbered-list" start="2"><li><strong>单继承有虚函数覆盖: 覆盖的f()替代原有父类虚函数位置,没覆盖的不变</strong><figure id="f7055e19-d1bc-464b-bfc6-1cb167e2aca9" class="image"><a href="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%201.png"><img style="width:432px" src="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%201.png"/></a></figure></li></ol><h2 id="e86b3255-49ba-4625-b0ef-0962a2e1d50f" class="">多继承</h2><ol type="1" id="99d47692-0114-480a-a7a4-af31b43f08ac" class="numbered-list" start="1"><li>多继承无虚函数重写，子类继承所有父类的虚表，子类虚函数放入第一个虚表中<figure id="1c648cb9-453f-4cea-a27e-5940f8c09a9c" class="image"><a href="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%202.png"><img src="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%202.png"/></a></figure></li></ol><hr id="d07508c2-b0f8-45f3-8b60-576a7968e815"/><ol type="1" id="72b4a04a-9651-4ee9-a5db-afdb10883699" class="numbered-list" start="2"><li>多继承有虚函数重写，子类继承所有父类虚函数表，并在所有虚函数表中重写<figure id="76f38fab-9f53-488b-b858-34041f823ebe" class="image"><a href="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%203.png"><img style="width:756px" src="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%203.png"/></a></figure></li></ol><h1 id="867ca5c2-3bea-4f78-91f1-1173c6608ed8" class="">多态与虚继承：vptr和vbptr</h1><ol type="1" id="e529fdd5-fcc8-43b5-9455-2682b2e668f1" class="numbered-list" start="1"><li>虚函数表和虚基类表（菱形继承）<ol type="a" id="23c1a2d6-a80f-4141-aa5d-4316b183d0e0" class="numbered-list" start="1"><li>虚基类表和虚函数表互不干涉，取决于 是否虚继承 和 是否有虚函数</li></ol><ol type="a" id="e60c89f7-08f6-4d82-914f-7d9e840b8177" class="numbered-list" start="2"><li>内存模型中：虚基类表指针（vbptr）总是在虚函数表指针之后</li></ol></li></ol><h1 id="489ef66d-259c-476f-8eb0-bf75087ff3bc" class="">vbptr有什么用：保存着什么</h1><p id="98ce9233-a607-4c8e-95be-2043ab5a87b9" class="">保存偏移量，在菱形继承下：</p><p id="b2a0bcb0-ba2e-44e4-8a32-a19707cb6cf9" class="">    B</p><p id="cf08c23c-2d20-42af-8f0d-b3cdfc08cdfa" class="">  /   \</p><p id="53960136-67b2-434a-b4c3-2fb55a26425d" class=""> B1   B2<div class="indented"><p id="997807a3-3a71-44e6-bf61-2b688ad43ea3" class="">\  /</p><p id="f8c94e7e-d209-4d13-8119-81a997cd8c08" class=""> D</p></div></p><p id="68027547-b6d0-427c-a5db-f352a429cdbc" class="">D继承自B1的vbptr保存 1)到继承自B1的vptr的偏移；和2)到基类B的vptr的偏移</p><h2 id="366c23a8-7c4a-44df-8e0a-ebe1a64c9605" class="">内存模型</h2><figure id="a50fabc5-530f-43f0-abd4-73339dea8ead" class="image"><a href="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%204.png"><img style="width:288px" src="%E5%A4%9A%E6%80%81%201749ff7a21874d8aa4c1f88ac9079fd4/Untitled%204.png"/></a></figure><h1 id="63794087-dc66-4d2e-bea2-c8382852dbac" class="">面试题</h1><h2 id="9e2c4ab3-3155-48d4-a533-f9c7a710207d" class="">1.菱形继承下基类B的构造函数由谁来初始化</h2><p id="cf683118-7a52-490e-82dd-bde0f9cd3630" class="">如果出现菱形继承,B1有一个构造函数初始化B,B2也有一个构造函数初始化B,那么D类应该按谁的构造方式初始化B呢?</p><p id="19819bbb-2f2d-4e0a-9919-607f585f392f" class=""><strong>答案是必须让D来初始化虚基类B.</strong></p><p id="67dd8e0c-de51-4968-bb92-21d0091ff5ac" class=""><strong>C++规定必须由最终的派生类D来初始化虚基类B,直接派生类 B1 和 B2 对 B 的构造函数的调用是无效的,并且虚基类始终优先调用,与声明位置无关</strong></p><h2 id="23aedbed-5cfb-4495-b2e5-63fca5b09d90" class="">2.虚函数表和虚基类表在内存的什么位置</h2><p id="7a84d29a-b9c2-4d0b-b023-6753d9e39d23" class="">虚函数和普通函数一样在代码段</p><p id="11e39c7b-8214-4036-896a-4df1ddb947fb" class="">虚表在只读常量区（VS）</p><h2 id="283af8d7-d6e2-472c-84da-aecc3dc8ce63" class="">3.抽象类是什么</h2><ul id="3ece81fd-d06f-49ef-9a00-099c6ddeca46" class="bulleted-list"><li>有纯虚函数的类</li></ul><ul id="5015f69b-5ca3-4012-ba10-5cdc4c9a35f9" class="bulleted-list"><li>virtual type func() = 0;</li></ul><h2 id="6743732f-3d55-4afb-8d01-662dc70023ce" class="">4. final 和override 关键字</h2><ul id="5305b3e4-bda4-4d31-a97f-befc9fb7a56f" class="bulleted-list"><li>final标识禁止子类重写父类的虚函数</li></ul><ul id="224c83b6-53ae-4d33-b585-09964033dab3" class="bulleted-list"><li>override：标识该函数是子类重写父类的虚函数</li></ul><hr id="faa4d5a2-e853-4f9a-8c8b-62b69983a83f"/><ul id="70fed371-1999-4ae0-aba8-3932fa95ef9d" class="bulleted-list"><li>重载：同名函数的重载，只有名字相同</li></ul><ul id="61546cb9-a7aa-4087-b390-5ace48b29c48" class="bulleted-list"><li>覆盖：子类重写父类中的函数，名字，返回值，参数完全相同，<mark class="highlight-teal">覆盖/隐藏 </mark>父类的函数</li></ul><h2 id="5c22ddbf-fce1-4ba7-9e62-94509f2d39d8" class="">5. inline函数可以是虚函数吗</h2><ul id="b13eb43d-6338-434e-8b87-6fdeefd7222f" class="bulleted-list"><li>virtual和inline关键字可以并存，但在函数表现多态性的时候不能内联</li></ul><ul id="09458355-accd-486e-a73b-34f24956b0ee" class="bulleted-list"><li>不可以，inline函数没有地址，无法放到虚函数表中</li></ul><ul id="a4179d9f-8c0d-47fd-ae47-9222ee671459" class="bulleted-list"><li>内联是在编译器建议编译器内联，而虚函数的多态性在运行期，编译器无法知道运行期调用哪个代码，因此虚函数表现为多态性时（运行期）不可以内联。</li></ul><pre id="47bbd44c-8108-41fc-a41b-4d12ceb77fe8" class="code"><code>#include &lt;iostream&gt;
+	using namespace std;
+	// 基类
+	class Base{
+		public:
+			inline virtual void who(){
+				cout &lt;&lt; &quot;I am Base\n&quot;;
+			}
+			virtual ~Base(){}
+	};
+	// 派生类
+	class Derived:public Base{
+		public:
+			inline void who(){   // 不写inline时隐式内联
+				cout &lt;&lt; &quot;I am Derived\n&quot;;
+			}
+	};
+int  main(){
+	// 此处的虚函数 who()，是通过类（Base）的具体对象（b）来调用的，编译期间就能确定了，所以它可以是内联的，但最终是否内联取决于编译器。
+	Base b;
+	b.who();
+	// 此处的虚函数是通过指针调用的，呈现多态性，需要在运行时期间才能确定，所以不能为内联。
+	Base *bptr = new Derived();
+	bptr-&gt;who();
+	// 因为Base有虚析构函数（virtual ~Base() {}），所以 delete 时，会先调用派生类（Derived）析构函数，再调用基类（Base）析构函数，防止内存泄漏。
+	delete bptr;
+	bptr = nullptr;
+	return 0;
+	
+}</code></pre><h2 id="5888519c-d371-484c-9635-e0bae843270c" class="">6. static可以是虚函数吗</h2><p id="2499f234-b53e-489b-af91-c956967cd96c" class="">不可以，静态成员函数没有this指针，访问不到虚函数表</p><h2 id="8981385e-8668-4535-ada8-ee3a14c4321a" class="">7. 构造函数可以是虚函数吗</h2><p id="06e97300-457b-4939-968a-faf9693c3307" class="">不可以，虚函数指针是在构造函数初始化列表阶段生成的</p><p id="da243b73-0773-4e02-a491-71fa93eea437" class="">虚函数表存在于class object构造之后 </p><h2 id="f9008f7d-152c-47fa-a33a-6796cc71e05c" class="">8. 析构函数可以是虚函数吗</h2><p id="8dbfd964-2c7c-4a87-9ba7-939ee0acdb6e" class="">析构函数必须是虚函数</p><h2 id="2a6f3640-a9ac-4ce0-82b8-ec5f7554bbcb" class="">9. 对象访问虚函数快还是成员函数快</h2><ol type="1" id="30887c6d-1e03-43ed-8d41-5bf0c2aeb939" class="numbered-list" start="1"><li>如果是普通对象，一样快</li></ol><ol type="1" id="51f5de9c-6ac0-4b64-b4d5-52181c06a948" class="numbered-list" start="2"><li>如果是指针或者引用，普通成员函数更快</li></ol><h2 id="a054aae7-291e-4721-9dba-403bf78517a4" class="">10. 虚继承下的构造顺序 | 虚基类的构造函数由谁调用</h2><p id="fc74df59-c7d3-4e72-99c9-4605726a99e7" class="">虚基类的构造函数由最后派生的类的构造函数来执行</p><p id="6b353435-6a37-4906-81ea-c67e80be12f2" class="">普通继承下则是依次向上调用</p><p id="ad4515e9-8bc5-4968-a8da-9a85105701a4" class="">
+</p><h2 id="85db6d07-4b78-4b45-a6c8-c28c42aaa8e2" class="">11. 设计一个不能被继承的类</h2><pre id="e512acbd-4663-4571-beb4-a8419d4b91c7" class="code"><code>//对于MakeSealed类，将其构造函数设置为私有，则派生类无法调用
+///////////////////////////////////////////////////////////////////////
+// Define a class which can&#x27;t be derived from
+///////////////////////////////////////////////////////////////////////
+template &lt;typename T&gt; 
+class MakeFinal
+{
+      friend T;
+ 
+private :
+      MakeFinal() {}
+      ~MakeFinal() {}
+};
+ 
+class FinalClass2 : virtual public MakeFinal&lt;FinalClass2&gt;
+{
+public :
+      FinalClass2() {}
+      ~FinalClass2() {}
+};</code></pre><p id="b72b4c31-436c-4a00-98ed-b56354a0a7a5" class="">
+</p></div></article></body></html>

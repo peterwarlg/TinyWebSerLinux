@@ -1,5 +1,5 @@
 //
-// Created by marvinle on 2019/2/1 7:34 PM.
+// Created by peterwarlg on 2021/2/1 7:34 PM.
 //
 
 #include "../../include/Server.h"
@@ -51,7 +51,7 @@ char FORBIDDEN_PAGE[] = "<html>\n"
 char INDEX_PAGE[] = "<!DOCTYPE html>\n"
                     "<html>\n"
                     "<head>\n"
-                    "    <title>Welcome to LC WebServer!</title>\n"
+                    "    <title>Welcome to My WebServer!</title>\n"
                     "    <style>\n"
                     "        body {\n"
                     "            width: 35em;\n"
@@ -61,15 +61,22 @@ char INDEX_PAGE[] = "<!DOCTYPE html>\n"
                     "    </style>\n"
                     "</head>\n"
                     "<body>\n"
-                    "<h1>Welcome to LC WebServer!</h1>\n"
+                    "<h1>Welcome to My WebServer!</h1>\n"
                     "<p>If you see this page, the lc webserver is successfully installed and\n"
                     "    working. </p>\n"
+
                     "\n"
                     "<p>For online documentation and support please refer to\n"
-//                    "    <a href=\"https://github.com/MarvinLe/WebServer\">LC WebServer</a>.<br/>\n"
-                    "    <a href=\"pages/bookmark.html\">LC WebServer</a>.<br/>\n"
+                    "    <a href=\"https://github.com/peterwarlg/TinyWebSerLinux\">My WebServer</a>.<br/>\n"
                     "\n"
-                    "<p><em>Thank you for using LC WebServer.</em></p>\n"
+
+                    "<p>Here is For my Study Notes\n"
+                    "    <a href=\"pages/index.html\">My Notes</a>.<br/>\n"
+                    "\n"
+                    "<p>Also U Can Find All My Notes in My Notion\n"
+                    "    <a href=\"https://www.notion.so/wangzituuu\">My Notion Account</a>.<br/>\n"
+                    "\n"
+                    "<p><em>Thank you for using My WebServer.</em></p>\n"
                     "</body>\n"
                     "</html>";
 
@@ -101,7 +108,7 @@ void HttpServer::run(int thread_num, int max_queque_size) {
         std::vector<std::shared_ptr<HttpData>> events = Epoll::poll(serverSocket, 1024, -1);
         // FIXME 将事件传递给 线程池
         for (auto& req : events) {
-            threadPool.append(req, std::bind(&HttpServer::do_request, this, std::placeholders::_1));
+            threadPool.append(req, std::bind(&HttpServer::_fooDoRequest, this, std::placeholders::_1));
         }
         // 处理定时器超时事件
         Epoll::timerManager.handle_expired_event();
@@ -109,7 +116,7 @@ void HttpServer::run(int thread_num, int max_queque_size) {
 }
 
 
-void HttpServer::do_request(std::shared_ptr<void> arg) {
+void HttpServer::_fooDoRequest(std::shared_ptr<void> arg) {
     std::shared_ptr<HttpData> sharedHttpData = std::static_pointer_cast<HttpData>(arg);
 
     char buffer[BUFFERSIZE];
@@ -187,7 +194,7 @@ void HttpServer::fooHeader(std::shared_ptr<HttpData> httpData) {
         httpData->response_->setVersion(HttpRequest::HTTP_10);
     }
     //<string, string>
-    httpData->response_->addHeader("Server", "LC WebServer");
+    httpData->response_->addHeader("Server", "My WebServer");
 }
 
 

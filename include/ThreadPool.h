@@ -1,5 +1,5 @@
 //
-// Created by marvinle on 2019/2/25 11:26 PM.
+// Created by peterwarlg on 2021/2/25 11:26 PM.
 //
 
 //#ifndef WEBSERVER_THREADPOLL_H
@@ -27,7 +27,7 @@ typedef enum {
 } ShutdownMode;
 
 struct ThreadTask {
-    std::function<void(std::shared_ptr<void>)> process;     // 实际传入的是Server::do_request;
+    std::function<void(std::shared_ptr<void>)> process;     // 实际传入的是Server::_fooDoRequest;
     std::shared_ptr<void> arg;   // 实际应该是HttpData对象
 };
 

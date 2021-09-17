@@ -1,5 +1,5 @@
 //
-// Created by marvinle on 2019/2/1 2:54 PM.
+// Created by peterwarlg on 2021/2/1 2:54 PM.
 //
 
 //#ifndef WEBSERVER_SERVER_H
@@ -35,7 +35,7 @@ public:
 
     void run(int, int max_queue_size = 10000);
 
-    void do_request(std::shared_ptr<void> arg);
+    void _fooDoRequest(std::shared_ptr<void> arg);
 
 private:
 

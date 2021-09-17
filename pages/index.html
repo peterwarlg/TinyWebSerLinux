@@ -1,24 +1,677 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Welcome to LC!</title>
-    <style>
-        body {
-            width: 35em;
-            margin: 0 auto;
-            font-family: Tahoma, Verdana, Arial, sans-serif;
-        }
-    </style>
-</head>
-<body>
-<h1>Welcome to LC !</h1>
-<p>If you see this page, the lc webserver is successfully installed and
-    working. </p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>C++语法</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<p>For online documentation and support please refer to
-    <a href="http://82.156.190.227:7293/pages/bookmark.html">LC WebServer</a>.<br/>
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-<p><em>Thank you for using LC WebServer.</em></p>
-<p>查看书签<a href="http://82.156.190.227:8080/bookmark.html"></a></p>
-</body>
-</html>
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="528538d1-7970-42c5-b543-ce435ffebe2b" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_multi-axis_gimble_rig.jpg" style="object-position:center 80%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">💻</span></div><h1 class="page-title">C++语法</h1></header><div class="page-body"><nav id="4a4fa33a-a189-4f35-85e6-b59d361fd9e1" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#50ae26af-6ec7-4a64-8037-7c623516f0e4">关键字</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b3a335d6-bf7e-4523-bc37-a7e21ccede36">多态 &amp; 虚函数 &amp; 虚继承</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f5f2c0e9-ceff-4bb0-b15b-69e6844b5dd4">main函数执行之前和之后</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b634c128-1ec1-47d6-ad11-bd951194fa04">结构体内存对齐问题</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7d1a6657-2d07-4441-8a52-f954e392cf0e">指针和引用的区别</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9b2f941f-b45d-470a-b096-e1b57073f858">传递参数时，什么时候传指针，什么时候传引用</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7b1f09fc-d58d-4ca5-beae-43491fa5e6af">堆和栈的区别</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#dd2e293c-c6b0-4db2-b558-677e4c9b64eb">new/delete/malloc/free</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#eb638e0c-a137-462c-919b-4f9863298737">宏定义和函数的区别</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7ab73624-8267-4ae5-ba07-c5286a6891a6">宏定义和typedef的区别</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#44afa9a6-0713-4cce-8776-fb9040fc6387">为什么模板函数/模板类要定义在.h文件中</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#426dd47c-68a0-4ee3-8475-7177179f0b06">C++编译到运行的过程</a></div></nav><h1 id="50ae26af-6ec7-4a64-8037-7c623516f0e4" class="">关键字</h1><figure id="1578fd62-c12c-4188-b6aa-4663cfbc0035" class="link-to-page"><a href="C++%E8%AF%AD%E6%B3%95%20528538d1797042c5b543ce435ffebe2b/%E5%85%B3%E9%94%AE%E5%AD%97%201578fd62c12c4188b6aa4663cfbc0035.html"><span class="icon">⛳</span>关键字</a></figure><h1 id="b3a335d6-bf7e-4523-bc37-a7e21ccede36" class="">多态 &amp; 虚函数 &amp; 虚继承</h1><figure id="42bce271-3de0-4af4-af8d-5edd94667e0f" class="link-to-page"><a href="C++%E8%AF%AD%E6%B3%95%20528538d1797042c5b543ce435ffebe2b/%E5%A4%9A%E6%80%81%20&amp;%20%E8%99%9A%E5%87%BD%E6%95%B0%20&amp;%20%E8%99%9A%E7%BB%A7%E6%89%BF%2042bce2713de04af4af8d5edd94667e0f.html"><span class="icon">🚗</span>多态 &amp; 虚函数 &amp; 虚继承</a></figure><h1 id="f5f2c0e9-ceff-4bb0-b15b-69e6844b5dd4" class="">main函数执行之前和之后</h1><p id="3aa66cea-313b-4d1e-a959-0a138ed850ac" class="">main函数执行之前：<div class="indented"><ol type="1" id="e50f9f3b-9ab3-40d8-916c-adfa0e6521af" class="numbered-list" start="1"><li>设置栈指针</li></ol><ol type="1" id="2834df5b-63c7-4522-841b-8774446ce1fa" class="numbered-list" start="2"><li>初始化.data段数据</li></ol><ol type="1" id="1d20055c-bb40-4acf-b1a4-365ad244fb6f" class="numbered-list" start="3"><li>初始化.bss段数据</li></ol><ol type="1" id="4e3bc165-9cbc-4c3c-b81f-3959c36f9508" class="numbered-list" start="4"><li>全局对象初始化，在main函数之前调用构造函数</li></ol><ol type="1" id="eead7505-3a14-4906-808a-c340bb549af8" class="numbered-list" start="5"><li>将main函数的参数argc，argv传递给main函数</li></ol></div></p><p id="cc5be06e-9d69-4987-b8ae-cff08eb802b1" class="">main函数执行之后<div class="indented"><ol type="1" id="ccf491bf-5376-4aab-8c23-bf6ee920b2b2" class="numbered-list" start="1"><li>全局对象的析构函数会在main函数之后执行</li></ol><ol type="1" id="e3cf0a8a-5d6a-4b5b-9ccb-d21a329a74a7" class="numbered-list" start="2"><li>可以用atexit注册一个函数，会在main函数之后执行</li></ol></div></p><h1 id="b634c128-1ec1-47d6-ad11-bd951194fa04" class="">结构体内存对齐问题</h1><ul id="366e0f68-3fd7-4ed2-a2ee-5fcfe00231b0" class="bulleted-list"><li>结构体内成员按照声明顺序储存，第一个成员和结构体地址相同</li></ul><ul id="0e944caf-421b-47e9-bf78-5b04341280a6" class="bulleted-list"><li>未特殊说明时，按照最大的成员对齐</li></ul><h1 id="7d1a6657-2d07-4441-8a52-f954e392cf0e" class="">指针和引用的区别</h1><ul id="beb9d0da-6167-4f73-9e55-6bf7dc917167" class="bulleted-list"><li>指针是一个变量，有实际的储存数据，引用是一个对象的别名</li></ul><ul id="8d3d5fc4-4451-4fe2-b644-6ac844ef7279" class="bulleted-list"><li>指针可以有多级，引用只有一级</li></ul><ul id="0be92c75-0f7f-42df-a0f9-96f5afe18992" class="bulleted-list"><li>指针可以指向空值，初始化时可以不赋值，引用初始化时必须赋值且不可更改</li></ul><ul id="43c07726-eb5c-43f8-bee8-0cfb664aa19a" class="bulleted-list"><li>sizeof指针得到的是指针的大小，sizeof引用得到的是引用的对象的大小</li></ul><ul id="58ef8ab0-c7c9-418c-82b9-aa5f01a7d756" class="bulleted-list"><li>指针作为参数传递时，也是值传递的形式；引用传递时，传的是实参的地址，所有操作都被处理成间接寻址</li></ul><ul id="a2a8ed45-e508-4514-b4e2-3b2e07c34fb5" class="bulleted-list"><li>不存在指向空值的引用</li></ul><h1 id="9b2f941f-b45d-470a-b096-e1b57073f858" class="">传递参数时，什么时候传指针，什么时候传引用</h1><ol type="1" id="681a5b69-0134-45cc-a021-74b02fe9bc1a" class="numbered-list" start="1"><li>类对象作为参数传递的时候使用引用，这是C++类对象传递的标准形式</li></ol><ol type="1" id="cc015f76-7682-453e-990c-ab56988d6e56" class="numbered-list" start="2"><li>需要返回函数内局部变量的内存用指针</li></ol><h1 id="7b1f09fc-d58d-4ca5-beae-43491fa5e6af" class="">堆和栈的区别</h1><ol type="1" id="c9db3bf2-d4e5-4a8d-91b2-1248273b22ac" class="numbered-list" start="1"><li>栈的地址由高到低向下分配，堆的地址由低到高向上分配</li></ol><ol type="1" id="37bd2221-2b71-47e3-9f7a-01e1280e3612" class="numbered-list" start="2"><li>栈由系统调用分配释放，堆由程序员控制分配和释放 </li></ol><ol type="1" id="67327f3f-c312-41c1-ba31-6b7c9937bca8" class="numbered-list" start="3"><li>申请的大小限制不同</li></ol><ol type="1" id="335a76bb-8402-4297-89c4-1114e1a4d170" class="numbered-list" start="4"><li>栈是连续的，堆是不连续的内存空间，会有碎片</li></ol><ol type="1" id="feb515c0-8911-4ce7-825b-14ae70c5881e" class="numbered-list" start="5"><li>堆的效率比栈低<ol type="a" id="c32fed20-1fab-4d11-b4f9-719a25196f1c" class="numbered-list" start="1"><li>堆的分配按照C++而言，由C/C++库函数实现，其中机制复杂，会比栈效率低</li></ol><ol type="a" id="7fbd1c5f-5500-4443-9300-2e35b792f0eb" class="numbered-list" start="2"><li>栈由计算机在底层提供对栈的技术支持，分配专门的寄存器存放栈的地址</li></ol></li></ol><h1 id="dd2e293c-c6b0-4db2-b558-677e4c9b64eb" class="">new/delete/malloc/free</h1><ol type="1" id="d4dd29d7-48d8-4127-b427-3ca3bb20b4ce" class="numbered-list" start="1"><li>前者是c++运算符，后者是C/C++标准库函数</li></ol><ol type="1" id="5eb0b2dd-d523-4deb-92b8-725cb310c206" class="numbered-list" start="2"><li>new是类型安全的，malloc不是</li></ol><h1 id="eb638e0c-a137-462c-919b-4f9863298737" class="">宏定义和函数的区别</h1><ol type="1" id="d010bc13-0935-4e22-8377-69261728af7c" class="numbered-list" start="1"><li>宏在编译时完成替换，被替换的文本参与编译，相当于直接插入代码，不存在函数调用</li></ol><ol type="1" id="f0189e89-b919-4cb5-871b-5d80b0a48d2b" class="numbered-list" start="2"><li>宏没有返回值，函数调用有返回值</li></ol><ol type="1" id="2d697168-c7ce-4f45-9f8f-24aae09ecea7" class="numbered-list" start="3"><li>宏定义参数没有类型，不进行类型检查</li></ol><h1 id="7ab73624-8267-4ae5-ba07-c5286a6891a6" class="">宏定义和typedef的区别</h1><ol type="1" id="c85b5c51-1328-4202-aefe-e9a8c003dc97" class="numbered-list" start="1"><li>宏定义发生在编译之前，属于文本替换，typedef是编译的一部分</li></ol><ol type="1" id="aba8af07-7f07-4b02-8dde-f72c153c4a5b" class="numbered-list" start="2"><li>宏主要用于定义常量和复杂的内容，typedef主要用于类型别名</li></ol><ol type="1" id="2c6ba5b4-1c5e-46b1-8c41-93248b406041" class="numbered-list" start="3"><li>宏不检查类型，typedef检查类型</li></ol><ol type="1" id="012b4697-de5a-4399-98d9-0a761f53ee56" class="numbered-list" start="4"><li>宏不是语句，不用加分号</li></ol><pre id="4db79f63-542f-490c-9f9c-ee98a5dbd34b" class="code"><code>char *pa, pb; //定义了一个指针和一个非指针
+
+
+typedef char* Pchar
+Pchar pa, pb;    //定义了两个指针
+
+#define pchar char*
+pchar pa, pb;    //定义了一个指针，因为#define只是做文本替换</code></pre><h1 id="44afa9a6-0713-4cce-8776-fb9040fc6387" class="">为什么模板函数/模板类要定义在.h文件中</h1><ul id="5a574000-89db-4d3e-af87-2d903259b455" class="bulleted-list"><li>一个编译单元[translation unit]是指一个.cpp文件以及它所include的所有.h文件，.h文件里的代码将会被扩展到包含它的.cpp文件里，然后编译器编译该.cpp文件为一个.obj文件，后者拥有PE[Portable Executable,即windows可执行文件]文件格式，并且本身包含的就已经是二进制码，</li></ul><ul id="5c534d91-064c-4f5b-966e-f693fa631d0b" class="bulleted-list"><li>但是，不一定能够执行，因为并不保证其中一定有main函数。</li></ul><ul id="526adb25-b51c-4977-a1bf-e699a4b383bc" class="bulleted-list"><li>当编译器将一个工程里的所有.cpp文件以分离的方式编译完毕后，再由连接器(linker)进行连接成为一个.exe文件。</li></ul><ul id="392f06ce-bb0d-43ac-b73d-b41c6e7d4728" class="bulleted-list"><li>对于模板，你知道，模板函数的代码其实并不能直接编译成二进制代码，其中要有一个“具现化”的过程。</li></ul><pre id="a7a73548-d9e8-49f4-a03b-2e5d19b6f9f2" class="code"><code>//----------main.cpp------//
+ template&lt;class T&gt;
+ void f(T t)
+ {}
+ int main()
+ {
+   …//do something
+   f(10); //call f&lt;int&gt; 编译器在这里决定给f一个f&lt;int&gt;的具现体
+   …//do other thing
+  }
+
+如果
+f(10); //f&lt;int&gt;得以具现化出来
+f(10.0); //f&lt;double&gt;得以具现化出来
+这样main.obj中也就有了f&lt;int&gt;,f&lt;double&gt;两个函数的二进制代码段。以此类推</code></pre><ul id="3e04f869-9667-49d1-a166-17724850e308" class="bulleted-list"><li>将模板和它的实现分离的话</li></ul><pre id="cbaa3bbb-098d-41db-8af4-00887d49e650" class="code"><code>//-------------test.h----------------//
+    template&lt;class T&gt;
+    class A
+    {
+     public:
+        void f(); //这里只是个声明
+     };
+//---------------test.cpp-------------//
+  #include”test.h”
+  template&lt;class T&gt;
+  void A&lt;T&gt;::f()  //模板的实现，但注意：不是具现
+  {
+    …//do something
+  }
+//---------------main.cpp---------------//
+   #include”test.h”
+   int main()
+   {
+      A&lt;int&gt; a;
+      a.f();</code></pre><p id="01cc10e0-35df-4e1b-909c-8a2373aef038" class="">main编译过程中，并没有模板的具现，因此会寄希望于连接器在其他obj文件中找到</p><p id="f5f68131-32d7-43c5-bf56-362966420474" class="">但是test.cpp中未用到模板类，只定义了，未使用，因此也没有具现化</p><h1 id="426dd47c-68a0-4ee3-8475-7177179f0b06" class="">C++编译到运行的过程</h1><ol type="1" id="eafe85fc-0818-454e-ab38-4b2d3bd666c0" class="numbered-list" start="1"><li>预处理<ol type="a" id="a20dec57-2b88-461a-a557-d607c5ca32c5" class="numbered-list" start="1"><li>文本处理/消除注释</li></ol></li></ol><ol type="1" id="d8efc9cc-10c3-43f5-bf67-4f9a7860ea19" class="numbered-list" start="2"><li>编译</li></ol><ol type="1" id="6bf16874-747b-44bc-8d75-b0dd00a443a3" class="numbered-list" start="3"><li>汇编</li></ol><ol type="1" id="577714b7-ea93-4a8a-8cb5-d3d58e495054" class="numbered-list" start="4"><li>链接</li></ol><p id="68c31938-6c2f-4598-9442-68decd6f345f" class="">
+</p></div></article></body></html>

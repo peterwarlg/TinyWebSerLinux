@@ -1,0 +1,758 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>关键字</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1578fd62-c12c-4188-b6aa-4663cfbc0035" class="page mono"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_beige.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⛳</span></div><h1 class="page-title">关键字</h1></header><div class="page-body"><nav id="10a30e6b-e48b-480a-85d6-63d08f3b3605" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d15077c9-dcda-4362-8596-5726142f6fc3">1. static</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0c5b92bc-b05f-4347-94e7-9e81a97a2050">static作用</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#45d5ad51-29f8-4dac-ae61-d08d04e1b126">2. const</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c07ac755-34ec-4e91-a867-924a3a800f81">const修饰函数参数</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fdad871c-ab4b-40e4-9b59-20f58dd0f865">const修饰函数返回值</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4e159a89-d353-4549-9924-ce9983ee5fb7">const修饰成员函数 | const加在函数名之后</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#28ba37df-e7bc-4b84-8dfb-51400dd8e1e6">const对象</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#80df4aa2-6026-4e1f-a49a-fdd87d8cd5fb">extern</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9de9d432-9822-4277-beeb-f948399ba063">定义</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2ddaa1a6-0821-411d-b417-5db131dee273">第一个作用</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a4c46347-63eb-4ec7-afbe-81815e73a9ed">extern &quot;C&quot;</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#1431496a-a918-40eb-b252-5d52a10598c6">extern &quot;C&quot; 用法</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#df454190-c569-45c7-b646-b4f560c5f2fb">第二个作用：修饰函数和变量</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#0c4cd8cd-2547-4122-8b75-872fcd4cf477">修饰函数</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#87df58b2-8e3e-49b5-9481-c6a265d97d37">修饰变量：代表只声明不定义</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ad1cf7c7-a012-47fb-aca4-4fea1f71ba5c">try 、catch、throw</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#128238f6-ce0d-480c-8991-d80d980296b1">catch和throw的都是一个对象</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4131c9f1-d16e-497b-aa4b-2a8890fcfd58">catch所有类型</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5aa7dc38-240a-47ad-9585-b2e2a047485d">例子</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2c9b9cc0-194b-4d35-a156-411462016807">函数自身throw并且catch</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ce1eb23a-c912-43d7-a264-83aaa9ec6d70">异常的再抛出：自身不处理 并throw给上一级</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cf49442b-92ed-40aa-b18f-85e831ac85ab">函数捕获异常并处理但还是希望通知上级函数</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a6620169-148d-46d0-862b-0fb2e53be41e">异常声明列表</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#6fa62283-fe39-487d-ba37-2fb0055a9487">register</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#76299c4a-393f-46f9-8715-1e5a3e989bb3">sizeof</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7af58afe-80c3-4418-b350-3acf88b4d30e">volatile</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#a5938a10-664f-4592-8fa3-64e05e46f31f">inline</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f95c7a80-352d-446f-8f3e-f1fe772b0ed0">extend</a></div></nav><h1 id="d15077c9-dcda-4362-8596-5726142f6fc3" class="">1. static</h1><p id="b0ebb139-2632-45e1-a3b2-6d9098771654" class="">全局/静态储存区<div class="indented"><ul id="e4f5fe50-702e-49e8-a599-18c07a6b262d" class="bulleted-list"><li>.data 初始化的全局储存区</li></ul><ul id="5e528652-90c2-4c57-94c6-37a5337ee879" class="bulleted-list"><li>.BSS 未初始化的全局储存区</li></ul></div></p><h2 id="0c5b92bc-b05f-4347-94e7-9e81a97a2050" class="">static作用</h2><ol type="1" id="0a549172-07fa-4ad5-96eb-3a3c16af1a77" class="numbered-list" start="1"><li>隐藏<ol type="a" id="9755d996-8feb-47e7-b600-7a7c9313a6af" class="numbered-list" start="1"><li>所有static修饰的变量和函数，只对该文件可见，别的文件哪怕extern也不可见</li></ol></li></ol><ol type="1" id="59cf9661-85be-4d6a-9db3-f0fb01820f2f" class="numbered-list" start="2"><li>保持变量内容的持久<ol type="a" id="88dcc8dd-670f-4209-a539-ff92414015ed" class="numbered-list" start="1"><li>定义在函数内部的static变量，不会随函数生命周期消失；只会被初始化一次；</li></ol><ol type="a" id="06fd3f11-6fa1-4ad5-96c5-936e22a925ea" class="numbered-list" start="2"><li>储存在静态数据区，只会在程序刚开始运行时就初始化且只初始化一次</li></ol><ol type="a" id="09c1d05c-aaf7-4c78-abb3-ccde01536489" class="numbered-list" start="3"><li>全局变量和静态变量储存在静态储存区，static控制可见范围</li></ol></li></ol><ol type="1" id="27af7cd2-eacb-446d-90b5-fb79ccbe0967" class="numbered-list" start="3"><li>默认初始化为0</li></ol><ol type="1" id="ed3718e9-53b5-4a35-9c92-b2842ca122c6" class="numbered-list" start="4"><li>类成员声明为static<ol type="a" id="6516f52e-409e-4e86-ba95-40a68d6fcfe5" class="numbered-list" start="1"><li>模块内的static变量可以被模块内所有函数访问，模块外函数不可访问</li></ol><ol type="a" id="93cb9809-bc16-4750-af15-f7f500e63b70" class="numbered-list" start="2"><li>模块内的static函数只被模块内所用函数访问，使用范围被限制在该模块</li></ol><ol type="a" id="03eb24fd-c718-4283-bf35-d53a7e8c2f48" class="numbered-list" start="3"><li>static修饰的成员对象必须在类外初始化，因为其先于对象而存在</li></ol><ol type="a" id="96e1919e-5d58-4a60-821b-18354c52ba74" class="numbered-list" start="4"><li>static成员没有this指针，所以不能使用其他非static成员</li></ol><ol type="a" id="f2651b60-f758-4182-9482-777866da51d2" class="numbered-list" start="5"><li>不能被virtual修饰，因为其没有this指针，虚函数的调用在于使用this指向的vptr的vtable</li></ol></li></ol><h1 id="45d5ad51-29f8-4dac-ae61-d08d04e1b126" class="">2. const</h1><ol type="1" id="328b9c58-8891-4ae8-a171-a4b036243688" class="numbered-list" start="1"><li>不考虑类的情况<ul id="e23dca3b-0e3a-42e2-a8a3-24f714461588" class="bulleted-list"><li>定义时必须初始化，初始化之后无法更改</li></ul><ul id="0f3117ba-e488-400b-9e76-c0cdf3fdf4ac" class="bulleted-list"><li>const形参可以接收非const实参</li></ul></li></ol><ol type="1" id="bca24e93-1c6e-4c43-afda-0e517386cda7" class="numbered-list" start="2"><li>考虑类的情况<ul id="2f5448d3-0e83-421b-8e30-1e9be81af978" class="bulleted-list"><li>const成员变量<ul id="056f09e0-5e91-4fe1-a3d9-71c047480e6c" class="bulleted-list"><li>不能在类中定义时初始化，因为不同对象可能有不同值</li></ul><ul id="f3f7ad52-65ba-4d37-b2e7-8855ecbfbfc8" class="bulleted-list"><li>只能通过构造函数初始化列表初始化，必须有构造函数</li></ul></li></ul></li></ol><h2 id="c07ac755-34ec-4e91-a867-924a3a800f81" class="">const修饰函数参数</h2><ul id="64ea1944-b1fe-4d51-9231-4a6becd81495" class="bulleted-list"><li>const形参可以接收非const实参</li></ul><ul id="7a12af79-6a61-4cf7-9cbd-77c500f1d447" class="bulleted-list"><li><strong>对于非内部数据类型的输入参数，应该将“值传递”的方式改为“const引用传递”</strong>，目的是提高效率。例如将<code>void Func(A a)</code> 改为<code>void Func(const A &amp;a)</code>。</li></ul><ul id="e2ff5d1b-163f-47bd-8dfc-7b4c1d998005" class="bulleted-list"><li><strong>对于内部数据类型的输入参数，不要将“值传递”的方式改为“const引用传递”。</strong>否则既达不到提高效率的目的，又降低了函数的可理解性。例如<code>void Func(int x)</code> 不应该改为void <code>Func(const int &amp;x)</code>。</li></ul><h2 id="fdad871c-ab4b-40e4-9b59-20f58dd0f865" class="">const修饰函数返回值</h2><p id="7e4481a7-f633-4d2b-b99f-35aadf3723de" class="">该返回值只能被赋值给const修饰的同类型变量</p><ul id="10694987-770e-4577-95d0-4c950734c5ca" class="bulleted-list"><li>当返回一个const修饰的指针时，接收方应该也是const修饰的指针</li></ul><ul id="1f916051-afef-4d0f-8d51-9fbe5978a87c" class="bulleted-list"><li>如果函数返回值采用“值传递方式”，由于函数会把返回值复制到外部临时的存储单元中，加const 修饰没有任何价值。</li></ul><h2 id="4e159a89-d353-4549-9924-ce9983ee5fb7" class="">const修饰成员函数 | const加在函数名之后</h2><ul id="1df290db-e09f-45ea-881c-0d4c9c33c759" class="bulleted-list"><li>表明该函数不会修改成员变量</li></ul><ul id="aa7f03a0-0e77-4095-8a50-807528713211" class="bulleted-list"><li>只能调用const修饰的成员函数</li></ul><h2 id="28ba37df-e7bc-4b84-8dfb-51400dd8e1e6" class="">const对象</h2><ul id="cf09083c-5dc8-4698-9a66-06610dc41d83" class="bulleted-list"><li>const对象只能访问const函数</li></ul><ul id="480ac28e-0394-4e8d-be9e-772feded99ce" class="bulleted-list"><li>const对象不能修改成员变量 | 可以修改成员指针指向的对象</li></ul><ul id="dfc021c4-3d91-48e5-8391-83ab928831a5" class="bulleted-list"><li>加上mutable的成员变量可以被任何函数和对象直接修改</li></ul><h1 id="80df4aa2-6026-4e1f-a49a-fdd87d8cd5fb" class="">extern</h1><h2 id="9de9d432-9822-4277-beeb-f948399ba063" class="">定义</h2><p id="54f4355c-690e-480f-9007-406750f27ac2" class="">置于变量或函数之前，标识变量或函数定义在别的文件中，提示编译器遇到此变量和函数时在其他模块中寻找其定义。此外extern也可用来进行链接指定。</p><h2 id="2ddaa1a6-0821-411d-b417-5db131dee273" class="">第一个作用</h2><h3 id="a4c46347-63eb-4ec7-afbe-81815e73a9ed" class="">extern &quot;C&quot;</h3><ol type="1" id="a2912133-1961-4b0c-92d5-27bc484dca06" class="numbered-list" start="1"><li>C++中调用c语言代码；在程序中加上这句，告诉编译器这部分是使用C语言写的</li></ol><h3 id="1431496a-a918-40eb-b252-5d52a10598c6" class="">extern &quot;C&quot; 用法</h3><ol type="1" id="60ab398c-f6ac-440f-b042-eb45e766cc5d" class="numbered-list" start="1"><li>包含c语言的头文件：cExample.h，需要进行下列处理</li></ol><pre id="16cd5fbe-1de2-40a3-a9a6-fa2e2bbfe4cc" class="code"><code>extern &quot;C&quot; {
+#include &quot;cExample.h&quot;
+}</code></pre><hr id="112a06d8-ad5b-448b-b6fa-78b63b5e07dc"/><ol type="1" id="f0e11c55-0ab2-48ac-a519-bbfaa0ca6c96" class="numbered-list" start="2"><li>包含.h .c .cpp文件的项目<pre id="1a810c23-607b-49dd-bb9f-01d612d4d5d3" class="code"><code>/* c语言头文件：cExample.h */
+#ifndef C_EXAMPLE_H
+#define C_EXAMPLE_H
+extern int add(int x,int y);     //注:写成extern &quot;C&quot; int add(int , int ); 也可以
+#endif
+
+/* c语言实现文件：cExample.c */
+#include &quot;cExample.h&quot;
+int add( int x, int y )
+{
+　return x + y;
+}
+
+// c++实现文件，调用add：cppFile.cpp
+extern &quot;C&quot;
+{
+	//注：此处不妥，如果这样编译通不过，换成 extern &quot;C&quot; int add(int , int ); 可以通过
+　#include &quot;cExample.h&quot; 
+}
+int main(int argc, char* argv[])
+{
+　add(2,3);
+　return 0;
+}</code></pre></li></ol><ul id="5889110e-10a7-4ba0-881e-ccd493c55031" class="bulleted-list"><li><code>extern &quot;C&quot; void fun(int a, int b);</code>告诉编译器按照c的规则去编译相应的函数</li></ul><pre id="0cb859ec-3078-4219-965b-7c705e8f937b" class="code"><code>#ifdef __cplusplus
+#if __cplusplus
+extern &quot;C&quot;{
+　#endif
+　#endif /* __cplusplus */
+　…
+　…
+　//.h文件结束的地方
+　#ifdef __cplusplus
+　#if __cplusplus
+}
+#endif
+#endif /* __cplusplus */
+
+
+//或者 c调用c++函数（接口）
+//如果是C++文件（*.cpp）后缀，则使用extern “C”
+#ifdef __cplusplus
+extern &quot;C&quot; 
+{
+#endif
+//代码
+#ifdef __cplusplus
+}
+#endif</code></pre><h2 id="df454190-c569-45c7-b646-b4f560c5f2fb" class="">第二个作用：修饰函数和变量</h2><ol type="1" id="759dcb5a-6e16-47fe-b83b-c0aa4eb7ed96" class="numbered-list" start="1"><li>此变量或函数在别处定义，要在此处引用</li></ol><ol type="1" id="95950cbc-b37c-4e63-b9cd-5144367d2429" class="numbered-list" start="2"><li>告诉编译器有一个type类型的变量x在某处存在，而编译器无需知道在哪，当所有文件编译完成后，由链接器将所有的x连接到某一处定义</li></ol><h3 id="0c4cd8cd-2547-4122-8b75-872fcd4cf477" class="">修饰函数</h3><p id="385262fe-b69c-49fb-8930-1d68a278d90d" class="">事实证明，当一个函数被声明或定义时，外部关键字是隐含假设的。当我们写作的时候</p><p id="603c52de-7694-488c-920e-d07460afbd01" class=""><code>int foo(int arg1, char arg2);</code></p><p id="4121dbc8-717f-417e-a2c5-ee184589a9c5" class="">编译器将其视为：</p><p id="34303bc0-107a-4f13-9934-e3a0f813426c" class=""><code>extern int foo(int arg1, char arg2);</code></p><h3 id="87df58b2-8e3e-49b5-9481-c6a265d97d37" class="">修饰变量：代表只声明不定义</h3><p id="d61d5918-2b70-4a14-8507-68051c1fea23" class="">变量声明时不分配内存；</p><p id="df77410e-f835-4605-828f-c39035ea0d51" class="">与<code>int i</code>不同，<code>extern int i</code> 代表只声明变量，不做定义，此时i不能被使用</p><pre id="b44c9bbc-bf3a-4181-9c2a-de7921e9e562" class="code"><code>extern int var;
+int main(void)
+{
+  var = 10;
+  return 0;
+}</code></pre><h1 id="ad1cf7c7-a012-47fb-aca4-4fea1f71ba5c" class="">try 、catch、throw</h1><p id="9c8f7427-1582-41f8-a2b7-b7ce96557985" class="">函数 A 在执行过程中发现异常时可以不加处理，而只是“拋出一个异常”给 A 的调用者，假定为函数 B。</p><p id="ca404a3b-9136-4bc7-8cb5-03f2dbff1f07" class="">拋出异常而不加处理会导致函数 A 立即中止，在这种情况下，函数 B 可以选择捕获 A 拋出的异常进行处理，也可以选择置之不理。如果置之不理，这个异常就会被拋给 B 的调用者，以此类推。</p><p id="92767260-9d52-4ecf-a2e4-45fc2e841f10" class="">如果一层层的函数都不处理异常，异常最终会被拋给最外层的 main 函数。main 函数应该处理异常。如果main函数也不处理异常，那么程序就会<mark class="highlight-teal">立即异常地中止</mark>。</p><h2 id="128238f6-ce0d-480c-8991-d80d980296b1" class="">catch和throw的都是一个对象</h2><pre id="3b5d03b5-bfda-42a0-9541-f2e83942de1c" class="code"><code>try {
+    语句组
+}
+catch(异常类型) {
+    异常处理代码
+}
+...
+catch(异常类型) {
+    异常处理代码
+}</code></pre><h2 id="4131c9f1-d16e-497b-aa4b-2a8890fcfd58" class="">catch所有类型</h2><pre id="f9fd6a3e-1463-4a8c-9ade-74c36b4d9061" class="code"><code>catch(...) {
+    ...
+}</code></pre><h2 id="5aa7dc38-240a-47ad-9585-b2e2a047485d" class="">例子</h2><pre id="0f1c3ce3-a1df-49c6-9f0c-711795fed392" class="code"><code>#include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+    double m ,n;
+    cin &gt;&gt; m &gt;&gt; n;
+    try {
+        cout &lt;&lt; &quot;before dividing.&quot; &lt;&lt; endl;
+        if( n == 0)
+            throw -1; //抛出int类型异常
+        else
+            cout &lt;&lt; m / n &lt;&lt; endl;
+        cout &lt;&lt; &quot;after dividing.&quot; &lt;&lt; endl;
+    }
+    catch(double d) {
+        cout &lt;&lt; &quot;catch(double) &quot; &lt;&lt; d &lt;&lt;  endl;
+    }
+    catch(int e) {
+        cout &lt;&lt; &quot;catch(int) &quot; &lt;&lt; e &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;finished&quot; &lt;&lt; endl;
+    return 0;
+}</code></pre><h2 id="2c9b9cc0-194b-4d35-a156-411462016807" class="">函数自身throw并且catch</h2><pre id="2faac29f-14ce-4383-a1ff-30d2e770dd91" class="code"><code>int CountTax(int salary)
+{
+    try {
+        if (salary &lt; 0)
+            throw - 1;
+        cout &lt;&lt; &quot;counting tax&quot; &lt;&lt; endl;
+    }
+    catch (int) {
+        cout &lt;&lt; &quot;salary &lt; 0&quot; &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;tax counted&quot; &lt;&lt; endl;
+    return salary * 0.15;
+}</code></pre><h2 id="ce1eb23a-c912-43d7-a264-83aaa9ec6d70" class="">异常的再抛出：自身不处理 并throw给上一级</h2><pre id="2c037ca4-ceea-4a11-820a-c787b3a5e857" class="code"><code>double Devide(double x, double y)
+{
+    if (y == 0)
+        throw string(&quot;devided by zero&quot;);
+    cout &lt;&lt; &quot;in Devide&quot; &lt;&lt; endl;
+    return x / y;
+}
+int main()
+{
+    double f = 1.2;
+    try {
+        f = Devide(3, 0);
+        cout &lt;&lt; &quot;end of try block&quot; &lt;&lt; endl;
+    }
+    catch (string e) {
+        cout &lt;&lt; e &lt;&lt; endl;
+    }
+    cout &lt;&lt; &quot;finished&quot; &lt;&lt; endl;
+    return 0;
+}</code></pre><p id="fb665e26-c091-4e04-aa1e-9c2bb980b592" class="">如果拋出的异常是派生类的对象，而 catch 块的异常类型是基类，那么这两者也能够匹配，因为派生类对象也是基类对象。</p><h2 id="cf49442b-92ed-40aa-b18f-85e831ac85ab" class="">函数捕获异常并处理但还是希望通知上级函数</h2><pre id="04c2f801-4524-4028-a52c-fc482364c08a" class="code"><code>catch (string s ) {
+        cout &lt;&lt; &quot;CountTax error : &quot; &lt;&lt; s &lt;&lt; endl;
+        throw; //继续抛出捕获的异常
+    }</code></pre><h2 id="a6620169-148d-46d0-862b-0fb2e53be41e" class="">异常声明列表</h2><ul id="0ec3e989-45b2-44e5-a09a-e770a1380f5c" class="bulleted-list"><li>为了增强程序的可读性和可维护性，使程序员在使用一个函数时就能看出这个函数可能会拋出哪些异常，C++ 允许在函数声明和定义时，加上它所能拋出的异常的列表，具体写法如下：</li></ul><ul id="0c67e2f4-ef26-42c2-ae32-8b98ae43fd58" class="bulleted-list"><li><code>void func() throw (int, double, A, B, C);</code> 或者<code>void func() throw (int, double, A, B, C){...}</code></li></ul><ul id="49548137-93d2-43e6-96da-5cb359b2c8dd" class="bulleted-list"><li>如果：<code>void fun() throw() {}</code> 表示不抛出异常</li></ul><ul id="8b9f4321-04a3-452f-8643-32b999c1ed02" class="bulleted-list"><li>函数如果拋出了其异常声明列表中没有的异常，在编译时不会引发错误，但在运行时， Dev C++ 编译出来的程序会出错；用 Visual Studio 2010 编译出来的程序则不会出错，异常声明列表不起实际作用。</li></ul><h1 id="6fa62283-fe39-487d-ba37-2fb0055a9487" class="">register</h1><h1 id="76299c4a-393f-46f9-8715-1e5a3e989bb3" class="">sizeof</h1><p id="5702b6b5-8b5d-4edf-a49e-757f2af6dd58" class="">
+</p><h1 id="7af58afe-80c3-4418-b350-3acf88b4d30e" class="">volatile</h1><h1 id="a5938a10-664f-4592-8fa3-64e05e46f31f" class="">inline</h1><h1 id="f95c7a80-352d-446f-8f3e-f1fe772b0ed0" class="">extend</h1></div></article></body></html>
